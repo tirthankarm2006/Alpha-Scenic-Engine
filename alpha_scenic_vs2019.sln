@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.35425.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SandBoxProj", "SandBoxProj\SandBoxProj.vcxproj", "{B378C961-D62E-4E3B-ABCC-D357F2C23EFF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "alpha_scenic_vs2019", "alpha_scenic_vs2019.vcxproj", "{4D303D27-E7EB-4190-8C10-94A51217E9CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B378C961-D62E-4E3B-ABCC-D357F2C23EFF}.Debug|x64.ActiveCfg = Debug|x64
+		{B378C961-D62E-4E3B-ABCC-D357F2C23EFF}.Debug|x64.Build.0 = Debug|x64
+		{B378C961-D62E-4E3B-ABCC-D357F2C23EFF}.Release|x64.ActiveCfg = Release|x64
+		{B378C961-D62E-4E3B-ABCC-D357F2C23EFF}.Release|x64.Build.0 = Release|x64
+		{4D303D27-E7EB-4190-8C10-94A51217E9CC}.Debug|x64.ActiveCfg = Debug|x64
+		{4D303D27-E7EB-4190-8C10-94A51217E9CC}.Debug|x64.Build.0 = Debug|x64
+		{4D303D27-E7EB-4190-8C10-94A51217E9CC}.Release|x64.ActiveCfg = Release|x64
+		{4D303D27-E7EB-4190-8C10-94A51217E9CC}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F0686C9A-B79E-4045-820D-453B7F6D0094}
+	EndGlobalSection
+EndGlobal

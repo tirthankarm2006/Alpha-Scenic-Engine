@@ -1,0 +1,3 @@
+[submodule "AlphaScenic/3rdPartyLibs/spdlog"]
+	path = AlphaScenic/3rdPartyLibs/spdlog
+	url = https://github.com/gabime/spdlog.git

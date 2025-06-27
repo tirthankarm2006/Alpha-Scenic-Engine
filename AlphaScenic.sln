@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AlphaScenic", "AlphaScenic\AlphaScenic.vcxproj", "{80E23E61-EC97-B756-758C-B12DE140AE5A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SandBoxProj", "SandBoxProj\SandBoxProj.vcxproj", "{CFD5C2EB-3B8B-3BE1-C47F-35B8303432E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Dist|x64 = Dist|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80E23E61-EC97-B756-758C-B12DE140AE5A}.Debug|x64.ActiveCfg = Debug|x64
+		{80E23E61-EC97-B756-758C-B12DE140AE5A}.Debug|x64.Build.0 = Debug|x64
+		{80E23E61-EC97-B756-758C-B12DE140AE5A}.Dist|x64.ActiveCfg = Dist|x64
+		{80E23E61-EC97-B756-758C-B12DE140AE5A}.Dist|x64.Build.0 = Dist|x64
+		{80E23E61-EC97-B756-758C-B12DE140AE5A}.Release|x64.ActiveCfg = Release|x64
+		{80E23E61-EC97-B756-758C-B12DE140AE5A}.Release|x64.Build.0 = Release|x64
+		{CFD5C2EB-3B8B-3BE1-C47F-35B8303432E5}.Debug|x64.ActiveCfg = Debug|x64
+		{CFD5C2EB-3B8B-3BE1-C47F-35B8303432E5}.Debug|x64.Build.0 = Debug|x64
+		{CFD5C2EB-3B8B-3BE1-C47F-35B8303432E5}.Dist|x64.ActiveCfg = Dist|x64
+		{CFD5C2EB-3B8B-3BE1-C47F-35B8303432E5}.Dist|x64.Build.0 = Dist|x64
+		{CFD5C2EB-3B8B-3BE1-C47F-35B8303432E5}.Release|x64.ActiveCfg = Release|x64
+		{CFD5C2EB-3B8B-3BE1-C47F-35B8303432E5}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

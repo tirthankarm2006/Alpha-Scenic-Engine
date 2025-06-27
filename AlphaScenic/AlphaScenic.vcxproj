@@ -15,27 +15,27 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{CFD5C2EB-3B8B-3BE1-C47F-35B8303432E5}</ProjectGuid>
+    <ProjectGuid>{80E23E61-EC97-B756-758C-B12DE140AE5A}</ProjectGuid>
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>SandBoxProj</RootNamespace>
+    <RootNamespace>AlphaScenic</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
     <PlatformToolset>v142</PlatformToolset>
@@ -55,31 +55,31 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(ProjectDir)..\bin\-windows-x86_64\SandBoxProj\</OutDir>
-    <IntDir>$(ProjectDir)..\bin-int\-windows-x86_64\SandBoxProj\Debug\</IntDir>
-    <TargetName>SandBoxProj</TargetName>
-    <TargetExt>.exe</TargetExt>
+    <OutDir>$(ProjectDir)..\bin\-windows-x86_64\AlphaScenic\</OutDir>
+    <IntDir>$(ProjectDir)..\bin-int\-windows-x86_64\AlphaScenic\Debug\</IntDir>
+    <TargetName>AlphaScenic</TargetName>
+    <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(ProjectDir)..\bin\-windows-x86_64\SandBoxProj\</OutDir>
-    <IntDir>$(ProjectDir)..\bin-int\-windows-x86_64\SandBoxProj\Release\</IntDir>
-    <TargetName>SandBoxProj</TargetName>
-    <TargetExt>.exe</TargetExt>
+    <OutDir>$(ProjectDir)..\bin\-windows-x86_64\AlphaScenic\</OutDir>
+    <IntDir>$(ProjectDir)..\bin-int\-windows-x86_64\AlphaScenic\Release\</IntDir>
+    <TargetName>AlphaScenic</TargetName>
+    <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(ProjectDir)..\bin\-windows-x86_64\SandBoxProj\</OutDir>
-    <IntDir>$(ProjectDir)..\bin-int\-windows-x86_64\SandBoxProj\Dist\</IntDir>
-    <TargetName>SandBoxProj</TargetName>
-    <TargetExt>.exe</TargetExt>
+    <OutDir>$(ProjectDir)..\bin\-windows-x86_64\AlphaScenic\</OutDir>
+    <IntDir>$(ProjectDir)..\bin-int\-windows-x86_64\AlphaScenic\Dist\</IntDir>
+    <TargetName>AlphaScenic</TargetName>
+    <TargetExt>.dll</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>AS_PLATFORM_WINDOWS;AS_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\AlphaScenic\3rdPartyLibs\spdlog\include;..\AlphaScenic\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>AS_PLATFORM_WINDOWS;AS_BUILD_DLL;AS_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>3rdPartyLibs\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -88,16 +88,20 @@
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ImportLibrary>..\bin\-windows-x86_64\AlphaScenic\AlphaScenic.lib</ImportLibrary>
     </Link>
+    <PostBuildEvent>
+      <Command>IF EXIST ..\bin\-windows-x86_64\AlphaScenic\AlphaScenic.dll\ (xcopy /Q /E /Y /I ..\bin\-windows-x86_64\AlphaScenic\AlphaScenic.dll ..\bin\-windows-x86_64\SandBoxProj &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\-windows-x86_64\AlphaScenic\AlphaScenic.dll ..\bin\-windows-x86_64\SandBoxProj &gt; nul)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>AS_PLATFORM_WINDOWS;AS_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\AlphaScenic\3rdPartyLibs\spdlog\include;..\AlphaScenic\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>AS_PLATFORM_WINDOWS;AS_BUILD_DLL;AS_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>3rdPartyLibs\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -108,17 +112,21 @@
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>..\bin\-windows-x86_64\AlphaScenic\AlphaScenic.lib</ImportLibrary>
     </Link>
+    <PostBuildEvent>
+      <Command>IF EXIST ..\bin\-windows-x86_64\AlphaScenic\AlphaScenic.dll\ (xcopy /Q /E /Y /I ..\bin\-windows-x86_64\AlphaScenic\AlphaScenic.dll ..\bin\-windows-x86_64\SandBoxProj &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\-windows-x86_64\AlphaScenic\AlphaScenic.dll ..\bin\-windows-x86_64\SandBoxProj &gt; nul)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>AS_PLATFORM_WINDOWS;AS_Dist;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\AlphaScenic\3rdPartyLibs\spdlog\include;..\AlphaScenic\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>AS_PLATFORM_WINDOWS;AS_BUILD_DLL;AS_Dist;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>3rdPartyLibs\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -129,18 +137,25 @@
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>..\bin\-windows-x86_64\AlphaScenic\AlphaScenic.lib</ImportLibrary>
     </Link>
+    <PostBuildEvent>
+      <Command>IF EXIST ..\bin\-windows-x86_64\AlphaScenic\AlphaScenic.dll\ (xcopy /Q /E /Y /I ..\bin\-windows-x86_64\AlphaScenic\AlphaScenic.dll ..\bin\-windows-x86_64\SandBoxProj &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\-windows-x86_64\AlphaScenic\AlphaScenic.dll ..\bin\-windows-x86_64\SandBoxProj &gt; nul)</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\SandBoxApp.cpp" />
+    <ClInclude Include="src\AlphaScenic.h" />
+    <ClInclude Include="src\AlphaScenic\Application.h" />
+    <ClInclude Include="src\AlphaScenic\EntryPoint.h" />
+    <ClInclude Include="src\AlphaScenic\Log.h" />
+    <ClInclude Include="src\AlphaScenic\core.h" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AlphaScenic\AlphaScenic.vcxproj">
-      <Project>{80E23E61-EC97-B756-758C-B12DE140AE5A}</Project>
-    </ProjectReference>
+    <ClCompile Include="src\AlphaScenic\Application.cpp" />
+    <ClCompile Include="src\AlphaScenic\Log.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

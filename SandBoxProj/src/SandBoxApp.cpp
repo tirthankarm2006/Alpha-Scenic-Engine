@@ -9,7 +9,6 @@ public:
 	~SandBox() {
 
 	}
-
 };
 
 AS::Application* AS::CreateApplication() {

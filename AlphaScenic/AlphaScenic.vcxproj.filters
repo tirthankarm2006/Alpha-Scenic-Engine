@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="AlphaScenic">
+      <UniqueIdentifier>{80E23E61-EC97-B756-758C-B12DE140AE5A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\AlphaScenic.h" />
+    <ClInclude Include="src\AlphaScenic\Application.h">
+      <Filter>AlphaScenic</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlphaScenic\EntryPoint.h">
+      <Filter>AlphaScenic</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlphaScenic\Log.h">
+      <Filter>AlphaScenic</Filter>
+    </ClInclude>
+    <ClInclude Include="src\AlphaScenic\core.h">
+      <Filter>AlphaScenic</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\AlphaScenic\Application.cpp">
+      <Filter>AlphaScenic</Filter>
+    </ClCompile>
+    <ClCompile Include="src\AlphaScenic\Log.cpp">
+      <Filter>AlphaScenic</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

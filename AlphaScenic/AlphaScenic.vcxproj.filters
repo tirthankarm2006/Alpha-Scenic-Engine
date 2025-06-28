@@ -4,6 +4,9 @@
     <Filter Include="AlphaScenic">
       <UniqueIdentifier>{80E23E61-EC97-B756-758C-B12DE140AE5A}</UniqueIdentifier>
     </Filter>
+    <Filter Include="AlphaScenic\EventSystem">
+      <UniqueIdentifier>{79edb4da-017b-4965-ad08-258d3c8fe130}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\AlphaScenic.h" />
@@ -18,6 +21,21 @@
     </ClInclude>
     <ClInclude Include="src\AlphaScenic\core.h">
       <Filter>AlphaScenic</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationEvent.h">
+      <Filter>AlphaScenic\EventSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Event.h">
+      <Filter>AlphaScenic\EventSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyEvent.h">
+      <Filter>AlphaScenic\EventSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="MouseEvent.h">
+      <Filter>AlphaScenic\EventSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyCodes.h">
+      <Filter>AlphaScenic\EventSystem</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -10,3 +10,4 @@
      #error Alpha Scenic supports Windows only for now
 #endif
 
+#define BIT(x) (1 << x)

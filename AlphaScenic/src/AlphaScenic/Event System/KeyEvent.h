@@ -20,7 +20,7 @@ namespace AS {
 	class KeyPressedEvent : public KeyEvent
 	{
 	public:
-		KeyPressedEvent(const KEYCODE keyCode, bool isRepeat = false) : KeyEvent(keyCode), m_isRepeat(isRepeat) {}
+		KeyPressedEvent(const KEYCODE keyCode, bool isRepeat = false) : KeyEvent(keyCode), m_IsRepeat(isRepeat) {}
 
 		bool IsRepeat() const { return m_IsRepeat; }
 

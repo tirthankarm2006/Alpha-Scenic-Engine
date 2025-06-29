@@ -26,7 +26,8 @@ project "AlphaScenic"
 
     includedirs
     {
-        "%{prj.name}/3rdPartyLibs/spdlog/include"
+        "%{prj.name}/3rdPartyLibs/spdlog/include",
+        "%{prj.name}/src"
     }
 
     filter "system:windows"
